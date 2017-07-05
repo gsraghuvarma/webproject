@@ -22,5 +22,6 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/pcuser/.m2/repository/com/decompiler/jd-core-java/1.2/jd-core-java-1.2.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

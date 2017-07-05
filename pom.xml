@@ -84,38 +84,12 @@
 			<artifactId>guava</artifactId>
 			<version>r05</version>
 		</dependency>
+		
+		<dependency>
+			<groupId>com.decompiler</groupId>
+			<artifactId>jd-core-java</artifactId>
+			<version>1.2</version>
+		</dependency>
+		
 	</dependencies>
-        <profiles>
-            <!-- Jenkins by default defines a property BUILD_NUMBER which is used to enable the profile. -->
-            <profile>
-                <id>jenkins</id>
-                <activation>
-                    <property>
-                        <name>env.BUILD_NUMBER</name>
-                    </property>
-                </activation>
-                <build>
-                    <plugins>
-                        <plugin>
-                            <groupId>org.codehaus.mojo</groupId>
-                            <artifactId>cobertura-maven-plugin</artifactId>
-                            <version>2.2</version>
-                            <configuration>
-                                <formats>
-                                    <format>xml</format>
-                                </formats>
-                            </configuration>
-                            <executions>
-                                <execution>
-                                    <phase>package</phase>
-                                    <goals>
-                                        <goal>cobertura</goal>
-                                    </goals>
-                                </execution>
-                            </executions>
-                        </plugin>
-                    </plugins>
-                </build>
-            </profile>
-        </profiles>
 </project>

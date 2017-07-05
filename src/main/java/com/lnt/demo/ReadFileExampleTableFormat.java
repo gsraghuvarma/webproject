@@ -56,16 +56,16 @@ public class ReadFileExampleTableFormat {
 	static LinkedHashMap<String, HashMap<String, String>> compObjMap = new LinkedHashMap<String, HashMap<String, String>>();
 	static HashMap<String, String> strMap = new LinkedHashMap<String, String>();
 	static HashMap<HashMap<String, String>, Component> compStrMap = new LinkedHashMap<HashMap<String, String>, Component>();
-	static String labelVal1 = "";
+	static String labelVal1;
 
 	static HashMap<String, Component> mapSwingComponents = new LinkedHashMap<String, Component>();
 
-	static String styleStr = "";
+	static String styleStr;
 
 	static String labelFieldValue[];
-	static boolean flag = false;
-	static String eachFileLabelField = "";
-	static String fileName = null;
+	static boolean flag;
+	static String eachFileLabelField;
+	static String fileName;
 
 	public static void main(String[] args) throws FileNotFoundException, IOException {
 
@@ -77,9 +77,6 @@ public class ReadFileExampleTableFormat {
 		int count = 0;
 		int filedCount = 0;
 		String labelVal = "";
-
-		// String labelVal2="10";
-		// String s1 =".";
 
 		String sCurrentLine = null;
 		String subCompArray[] = null;
@@ -118,7 +115,7 @@ public class ReadFileExampleTableFormat {
 						if (subCompArray[0].trim().endsWith("JLabel") || subCompArray[0].trim().endsWith("JTextField")
 								|| subCompArray[0].trim().endsWith("JPasswordField")
 								|| subCompArray[0].trim().endsWith("JButton"))// ||
-																				// subCompArray[0].trim().contains(labelVal1))
+							// subCompArray[0].trim().contains(labelVal1))
 						{
 							Matcher m = Pattern.compile("\\(([^)]+)\\)").matcher(sCurrentLine);
 							if (m.find()) {
@@ -231,25 +228,6 @@ public class ReadFileExampleTableFormat {
 			}
 		}
 
-		/*
-		 * for (Entry<String, Component> entry : mapSwingComponents.entrySet())
-		 * { if(entry.getKey().toString().equalsIgnoreCase("JLabel")){
-		 * System.out.println("For JLabel -->>");
-		 * System.out.println("FontStryle ::"+entry.getValue().getFontStyle()+
-		 * " FontSize :: "+entry.getValue().getFontSize()+" Foreground ::"+entry
-		 * .getValue().getForeground()); }else
-		 * if(entry.getKey().toString().equalsIgnoreCase("JTextField")){
-		 * System.out.println("For JTextField -->>");
-		 * System.out.println("TextColumn size ::"+entry.getValue().
-		 * getTextFieldColumn()); }else
-		 * if(entry.getKey().toString().equalsIgnoreCase("JPasswordField")){
-		 * System.out.println("For JPasswordField -->>");
-		 * System.out.println("JPasswordFieldColumn size ::"+entry.getValue().
-		 * getPasswordFieldColumn()); }
-		 * 
-		 * }
-		 */
-
 		Html html = new Html(null) {
 			{
 				new Head(this) {
@@ -298,7 +276,7 @@ public class ReadFileExampleTableFormat {
 														.toString().equalsIgnoreCase(listval.get(0))) {
 
 													System.out.println("listval.get(0)  :::--->>>> " + listval.get(0)
-															+ " labelFieldValue[0] --" + labelFieldValue[0]);
+													+ " labelFieldValue[0] --" + labelFieldValue[0]);
 													Tr tr = new Tr(this) {
 														Td td1 = new Td(this, new CustomAttribute("colspan", "2"),
 																new Style("padding-left: 107px;font-size:30px;")) {
